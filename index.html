@@ -5,23 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyclone</title>
     <style>
+        /* 重置浏览器默认的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 20px 40px;
+            color: #fff;
+        }
+
+            /* 左侧的标题 */
+            header h1 {
+                font-size: 2.5em;
+            }
+
+        /* 右侧的导航链接 */
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+            nav a:hover {
+                color: #f39c12;
+            }
+
+        /* 主内容区 */
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: calc(100vh - 80px); /* 高度减去导航栏的高度 */
+            text-align: center;
         }
 
-        h1 {
-            font-size: 4em;
-            color: #333;
-        }
+            .content h2 {
+                font-size: 3em;
+            }
     </style>
 </head>
 <body>
-    <h1>Cyclone</h1>
+    <!-- 顶部导航栏 -->
+    <header>
+        <h1>Cyclone</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#illustration">Illustration</a>
+            <a href="#game">Game</a>
+        </nav>
+    </header>
+
+    <!-- 主内容区域 -->
+    <div class="content">
+        <h2>Welcome to Cyclone!</h2>
+    </div>
 </body>
 </html>
