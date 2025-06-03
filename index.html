@@ -119,6 +119,7 @@
                 padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
             }
 
             .illustration-content img {
@@ -182,6 +183,12 @@
             .photograph-carousel .next {
                 right: 0;
             }
+
+        /* 调整Photograph标题位置 */
+        .photograph-content h2 {
+            margin-top: 0; /* 移除默认的顶部间距 */
+            margin-bottom: 20px; /* 添加一点底部间距 */
+        }
     </style>
 </head>
 <body>
@@ -218,13 +225,13 @@
         <!-- Illustration -->
         <div id="illustration" class="page hidden illustration-content">
             <h2>Illustration</h2>
-            <div class="card">
+            <div class="card" onclick="window.open('https://x.com/Syklone_', '_blank')">
                 <img src="Image/X_logo.png" alt="X logo">
-                <a href="https://x.com/Syklone_" target="_blank">X Profile</a>
+                <p>X Profile</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="window.open('https://space.bilibili.com/382203208', '_blank')">
                 <img src="Image/Bilibili_logo.png" alt="Bilibili logo">
-                <a href="https://space.bilibili.com/382203208" target="_blank">Bilibili Profile</a>
+                <p>Bilibili Profile</p>
             </div>
         </div>
 
