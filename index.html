@@ -16,6 +16,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             color: #333;
+            margin: 0;
         }
 
         /* 顶部导航栏 */
@@ -23,22 +24,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #2c3e50;
+            background-color: #2c2c2c;
             padding: 20px 40px;
             color: #fff;
         }
 
             /* 左侧的标题 */
             header h1 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
         /* 右侧的导航链接 */
         nav a {
-            color: #ecf0f1;
+            color: #ddd;
             text-decoration: none;
             margin-left: 20px;
-            font-size: 1.2em;
+            font-size: 1em;
             transition: color 0.3s ease;
         }
 
@@ -49,7 +50,7 @@
         /* 横线 */
         .underline {
             width: 100%;
-            height: 3px;
+            height: 2px;
             background-color: #f39c12;
             margin-top: 10px;
         }
@@ -61,32 +62,111 @@
             align-items: center;
             height: calc(100vh - 140px); /* 高度减去导航栏和横线的高度 */
             text-align: center;
+            flex-direction: column;
         }
 
             .content h2 {
-                font-size: 3em;
+                font-size: 2em;
             }
 
-        /* 分页链接部分 */
+        /* HomePage 个人信息区域 */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+            .profile img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+            }
+
+            .profile .card {
+                background-color: #fff;
+                padding: 20px;
+                margin: 10px 0;
+                border-radius: 8px;
+                width: 300px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+                .profile .card h3 {
+                    font-size: 1.2em;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+
+                .profile .card p {
+                    font-size: 1em;
+                    color: #777;
+                }
+
         .illustration-content {
             text-align: left;
             padding: 20px;
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
 
             .illustration-content a {
-                color: #3498db;
-                text-decoration: none;
+                display: inline-block;
+                margin: 10px 0;
             }
 
-                .illustration-content a:hover {
-                    text-decoration: underline;
-                }
+            .illustration-content img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            .illustration-content a:hover img {
+                opacity: 0.8;
+            }
 
         /* 让分页内容区域在切换时显示 */
         .hidden {
             display: none;
         }
+
+        /* Photograph 轮播 */
+        .photograph-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .photograph-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+            .photograph-carousel img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            .photograph-carousel .prev, .photograph-carousel .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2em;
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            .photograph-carousel .prev {
+                left: 0;
+            }
+
+            .photograph-carousel .next {
+                right: 0;
+            }
     </style>
 </head>
 <body>
@@ -98,6 +178,7 @@
             <a href="#" onclick="showPage('home')">HomePage</a>
             <a href="#" onclick="showPage('illustration')">Illustration</a>
             <a href="#" onclick="showPage('game')">Game</a>
+            <a href="#" onclick="showPage('photograph')">Photograph</a>
         </nav>
     </header>
 
@@ -108,23 +189,45 @@
     <div class="content">
         <!-- Homepage -->
         <div id="home" class="page">
-            <h2>Welcome to Cyclone - Homepage</h2>
+            <div class="profile">
+                <img src="https://via.placeholder.com/120" alt="Profile Picture"> <!-- 个人头像 -->
+                <div class="card">
+                    <h3>Here is Cyclone</h3>
+                    <p>Anime Comic Game lover</p>
+                    <p>Traveling / Photograph</p>
+                    <p>Painting</p>
+                </div>
+            </div>
         </div>
 
         <!-- Illustration -->
         <div id="illustration" class="page hidden illustration-content">
             <h2>Illustration</h2>
-            <p>Here are some links to my works:</p>
-            <ul>
-                <li><a href="https://x.com/Syklone_" target="_blank">X Profile</a></li>
-                <li><a href="https://space.bilibili.com/382203208" target="_blank">Bilibili Profile</a></li>
-            </ul>
+            <p>SNS Links：</p>
+            <a href="https://x.com/Syklone_" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/X_logo_2023.svg/800px-X_logo_2023.svg.png" alt="X logo"> X Profile
+            </a>
+            <a href="https://space.bilibili.com/382203208" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Bilibili_logo_2018.svg/1280px-Bilibili_logo_2018.svg.png" alt="Bilibili logo"> Bilibili Profile
+            </a>
         </div>
 
         <!-- Game -->
         <div id="game" class="page hidden">
             <h2>Game</h2>
             <p>Coming soon...</p>
+        </div>
+
+        <!-- Photograph -->
+        <div id="photograph" class="page hidden photograph-content">
+            <h2>Photograph</h2>
+            <div class="photograph-carousel">
+                <img src="https://via.placeholder.com/800x400" alt="Photo 1">
+                <img src="https://via.placeholder.com/800x400/555555" alt="Photo 2" class="hidden">
+                <img src="https://via.placeholder.com/800x400/777777" alt="Photo 3" class="hidden">
+                <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+                <span class="next" onclick="moveSlide(1)">&#10095;</span>
+            </div>
         </div>
     </div>
 
@@ -142,6 +245,16 @@
 
         // 默认加载主页
         showPage('home');
+
+        // 轮播功能
+        let slideIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.photograph-carousel img');
+            slides[slideIndex].classList.add('hidden');
+            slideIndex = (slideIndex + step + slides.length) % slides.length;
+            slides[slideIndex].classList.remove('hidden');
+        }
     </script>
 
 </body>
