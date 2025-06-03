@@ -104,27 +104,39 @@
                     color: #777;
                 }
 
+        /* Illustration 卡片样式 */
         .illustration-content {
             text-align: left;
             padding: 20px;
             font-size: 1.2em;
         }
 
-            .illustration-content a {
-                display: inline-block;
-                margin: 10px 0;
+            .illustration-content .card {
+                display: flex;
+                align-items: center;
+                background-color: #fff;
+                margin-bottom: 15px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .illustration-content img {
                 width: 40px;
                 height: 40px;
-                margin-right: 10px;
-                vertical-align: middle;
+                margin-right: 20px;
             }
 
-            .illustration-content a:hover img {
-                opacity: 0.8;
+            .illustration-content a {
+                text-decoration: none;
+                color: #333;
+                display: flex;
+                align-items: center;
             }
+
+                .illustration-content a:hover {
+                    color: #f39c12;
+                }
 
         /* 让分页内容区域在切换时显示 */
         .hidden {
@@ -139,14 +151,17 @@
 
         .photograph-carousel {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px; /* 调整为更大尺寸 */
             margin: auto;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
             .photograph-carousel img {
                 width: 100%;
-                height: auto;
-                border-radius: 8px;
+                height: 600px; /* 调整为更高的高度 */
+                object-fit: cover;
+                transition: opacity 1s ease-in-out;
             }
 
             .photograph-carousel .prev, .photograph-carousel .next {
@@ -203,13 +218,14 @@
         <!-- Illustration -->
         <div id="illustration" class="page hidden illustration-content">
             <h2>Illustration</h2>
-            <p>SNS Links：</p>
-            <a href="https://x.com/Syklone_" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/X_logo_2023.svg/800px-X_logo_2023.svg.png" alt="X logo"> X Profile
-            </a>
-            <a href="https://space.bilibili.com/382203208" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Bilibili_logo_2018.svg/1280px-Bilibili_logo_2018.svg.png" alt="Bilibili logo"> Bilibili Profile
-            </a>
+            <div class="card">
+                <img src="Image/X_logo.png" alt="X logo">
+                <a href="https://x.com/Syklone_" target="_blank">X Profile</a>
+            </div>
+            <div class="card">
+                <img src="Image/Bilibili_logo.png" alt="Bilibili logo">
+                <a href="https://space.bilibili.com/382203208" target="_blank">Bilibili Profile</a>
+            </div>
         </div>
 
         <!-- Game -->
@@ -222,9 +238,9 @@
         <div id="photograph" class="page hidden photograph-content">
             <h2>Photograph</h2>
             <div class="photograph-carousel">
-                <img src="https://via.placeholder.com/800x400" alt="Photo 1">
-                <img src="https://via.placeholder.com/800x400/555555" alt="Photo 2" class="hidden">
-                <img src="https://via.placeholder.com/800x400/777777" alt="Photo 3" class="hidden">
+                <img src="Photograph/photo1.jpg" alt="Photo 1">
+                <img src="Photograph/photo2.jpg" alt="Photo 2" class="hidden">
+                <img src="Photograph/photo3.jpg" alt="Photo 3" class="hidden">
                 <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
                 <span class="next" onclick="moveSlide(1)">&#10095;</span>
             </div>
